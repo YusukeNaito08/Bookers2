@@ -1,1 +1,20 @@
-<h1>Top page</h1>
+<body>
+ <div class= "container">
+   <div class= "row">
+      <div class= "mx-auto ">
+      <h1>Weicome to<i class="fas fa-book">Bookers</i> </h1>
+      <p>you can share and exchange your opinions , inpressions , and emotions
+        about various books!</p>
+         </div>
+    </div>
+        <div class= "button-wrapper">
+         <div class= "row">
+             <div class= "mx-auto ">
+          <%= link_to "Login", new_user_session_path, class: "btn btn-secondary btn-block"  %>
+          <%= link_to "Sign-in", new_user_registration_path, class: "btn btn-secondary btn-block" %>
+     </div>
+     </div>
+   </div>
+ </div>
+</body>
+

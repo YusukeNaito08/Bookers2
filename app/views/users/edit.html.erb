@@ -1,5 +1,14 @@
-<h1>User info</h1>
-<%=form_with model: @user, local:true do |f| %>
+<% if @user.errors.any? %>
+  <%= @user.errors.count %>error prohibited　
+  <%= @user.errors.full_messages.each do |message| %>
+  <%= message %>
+  <% end %>
+<% end %>
+<h2>User Edit</h2>
+<div class= "container">
+  <div class= "row">
+    <div class="max-auto">
+      <%=form_with model: @user, local:true do |f| %>
 <h4>Nmae</h4>
  <%= f.text_field :name, autofocus: true %>
 <h4>Image</h4>
@@ -8,3 +17,6 @@
 <%= f.text_area :introduction %>
 <%= f.submit "Update User" %>
 <% end %>
+    </div>
+  </div>
+</div>

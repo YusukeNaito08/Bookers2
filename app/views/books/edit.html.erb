@@ -1,0 +1,21 @@
+ <% if @book.errors.any? %>
+  <%= @book.errors.count %>error prohibited
+  <%= @book.errors.full_messages.each do |message| %>
+  <%= message %>
+  <% end %>
+<% end %>
+<h2>Books Edit</h2>
+<div class ="container">
+ <div class="row">
+  <div class= "max-auto">
+   <h1>Book edit</h1>
+   <%=form_with model: @book, local:true do |f| %>
+    <h4>Nmae</h4>
+     <%= f.text_field :title, autofocus: true %>
+   <h4>Opinion</h4>
+     <%= f.text_area :body %>
+     <%= f.submit "Update book" %>
+   <% end %>
+  </div>
+ </div>
+</div>
