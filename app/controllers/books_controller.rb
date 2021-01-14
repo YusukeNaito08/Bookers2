@@ -58,8 +58,8 @@ end
 private
 def correct_user
       book = Book.find(params[:id])
-      if current_user.id != book.user_id
-      redirect_to root_path
+      if current_user.id != book.user.id
+      redirect_to user_session_path
       end
 end
 

@@ -28,7 +28,7 @@ end
 def index
  @book = Book.new
  @users =User.all
- @user= current_user
+ @user = current_user
 end
 
 
@@ -43,7 +43,7 @@ private
   def correct_user
      user = User.find(params[:id])
      if current_user.id != user.id
-       redirect_to root_path
+       redirect_to current_user
      end
   end
 
