@@ -24,12 +24,12 @@
  </table>
 
  <div class="row">
- <% if current_user.id == user.id %>
+  <div class = "mx-auto">
  <%=link_to  edit_user_path(current_user), class: "btn-decondsry btn-block" do %>
  <i class="fas fa-user-cog"></i>
  <% end %>
-<% end %>
  </div>
+  </div>
 <h2>New book</h2>
 <%=form_with model: book,  local: true do |f| %>
 <h4>Title</h4>
