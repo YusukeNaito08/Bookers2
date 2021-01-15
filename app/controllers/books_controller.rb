@@ -24,7 +24,7 @@ def index
 end
 
 def show
- @book = Book.find(params[:id])
+ @book= Book.find(params[:id])
  @user = @book.user
 end
 
@@ -47,7 +47,7 @@ def destroy
  @book = Book.find(params[:id])
  @book.destroy
  @user = @book.user
- redirect_to user_path(@user.id)
+ redirect_to books_path(@user.id)
 end
 
 private

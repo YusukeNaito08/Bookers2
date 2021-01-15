@@ -29,7 +29,7 @@
          <%=book.title%>
          <% end %></td>
      <td><%= book.body %></td>
-     <% if user_signed_in? && current_user.id == @book.id %>   <!---表示されない-->
+     <% if user_signed_in? && current_user.id == @book.id %>   
      <td><%= link_to "編集", edit_book_path(@book.id) %></td>
      <td><%= link_to "削除", book_path(@book.id), method: :delete %></td>
      <% end %>

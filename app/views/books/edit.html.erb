@@ -4,11 +4,10 @@
   <%= message %>
   <% end %>
 <% end %>
-<h2>Books Edit</h2>
+<h2>Editing Book</h2>
 <div class ="container">
  <div class="row">
   <div class= "max-auto">
-   <h1>Book edit</h1>
    <%=form_with model: @book, local:true do |f| %>
     <h4>Nmae</h4>
      <%= f.text_field :title, autofocus: true %>
@@ -16,6 +15,8 @@
      <%= f.text_area :body %>
      <%= f.submit "Update book" %>
    <% end %>
+   <%= link_to "Show", book_path(@book.id) %>
+   <%= link_to "Back", books_path %>
   </div>
  </div>
 </div>
