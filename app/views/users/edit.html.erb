@@ -1,5 +1,5 @@
 <% if @user.errors.any? %>
-  <%= @user.errors.count %>error prohibited　
+  <%= @user.errors.count %>error prohibited
   <%= @user.errors.full_messages.each do |message| %>
   <%= message %>
   <% end %>
@@ -15,7 +15,7 @@
 <%= f.attachment_field :profile_image %>
 <h4>Introduction</h4>
 <%= f.text_area :introduction %>
-<%= f.submit "Update User" %>
+<%= f.submit "Update User", class: "btn btn-success" %>
 <% end %>
     </div>
   </div>
