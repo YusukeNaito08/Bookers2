@@ -25,9 +25,11 @@
 
  <div class="row">
   <div class = "mx-auto">
- <%=link_to  edit_user_path(current_user), class: "btn-decondsry btn-block" do %>
+
+ <%=link_to  edit_user_path(@user.id), class: "btn-decondsry btn-block" do %>
  <i class="fas fa-user-cog"></i>
  <% end %>
+
  </div>
   </div>
 <h2>New book</h2>

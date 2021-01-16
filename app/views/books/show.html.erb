@@ -1,28 +1,45 @@
-<div class= "container">
+<main>
+  <div class= "container">
     <div class= "row">
       <div class= "col-md-3">
        <%= render 'books/user_info', user: @user, books: @books, book: @book %>
        </div>
-<div class= "col-md-8.offset-md-1">
-  <table class="table">
-    <thea>
-    <tr>
-      <th><h2>Book detail</h2></th>
-      <th></th>
-      <th></th>
-    </tr>
-    </thea>
-    <tbody>
-      <tr>
-        <th><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></th>
-        <td><%= link_to "#{@books.user.name}",user_path(@user.id) %></td>
-        <td><%= link_to  "#{@books.title }", book_path(@books.id) %></td>
-        <td><%= @book.body %></td>
-      <% if user_signed_in? && current_user.id == @books.user.id %>
-        <td><%= link_to "Edit", edit_book_path(@books.id), class: "btn btn-success" %></td>
-        <td><%= link_to "Destroy", book_path, method: :delete, class: "btn btn-danger" %></td>
-      <% end %>
-      </tr>
-    </tbody>
-  </table>
-</div>
+       <div class= "col-md-8 offset-md-1">
+       <table class="table">
+        <thead>
+         <tr>
+          <th><h2>Book detail</h2></th>
+          <th></th>
+          <th></th>
+         </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%=link_to user_path(@books.user.id) do %>
+              <%= attachment_image_tag @books.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+              <% end %><td>
+            <td><%= link_to "#{@books.user.name}",user_path(@user.id) %></td>
+            <td><%= link_to  "#{@books.title }", book_path(@books.id) %></td>
+            <td><%= @books.body %></td>
+              <% if current_user.id == @user.id %>
+            <td><%= link_to "Edit", edit_book_path(@books.id), class: "btn btn-success" %></td>
+            <td><%= link_to "Destroy", book_path, method: :delete, class: "btn btn-danger" %></td>
+              <% end %>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+      </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+
