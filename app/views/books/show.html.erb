@@ -1,7 +1,7 @@
 <div class= "container">
     <div class= "row">
       <div class= "col-md-3">
-       <%= render 'books/user_info', user: @user, book: @book %>
+       <%= render 'books/user_info', user: @user, books: @books, book: @book %>
        </div>
 <div class= "col-md-8.offset-md-1">
   <table class="table">
@@ -15,11 +15,11 @@
     <tbody>
       <tr>
         <th><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></th>
-        <td><%= link_to "#{@book.user.name}",user_path(@user.id) %></td>
-        <td><%= link_to  "#{@book.title }", book_path(@book.id) %></td>
+        <td><%= link_to "#{@books.user.name}",user_path(@user.id) %></td>
+        <td><%= link_to  "#{@books.title }", book_path(@books.id) %></td>
         <td><%= @book.body %></td>
-      <% if user_signed_in? && current_user.id == @book.user.id %>
-        <td><%= link_to "Edit", edit_book_path(@book.id), class: "btn btn-success" %></td>
+      <% if user_signed_in? && current_user.id == @books.user.id %>
+        <td><%= link_to "Edit", edit_book_path(@books.id), class: "btn btn-success" %></td>
         <td><%= link_to "Destroy", book_path, method: :delete, class: "btn btn-danger" %></td>
       <% end %>
       </tr>
